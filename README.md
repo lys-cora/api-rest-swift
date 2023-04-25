@@ -1,75 +1,58 @@
-# api-rest-swift
-
-import UIKit
-
-class MyTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    let cellReuseIdentifier = "MyTableViewCell"
-    var tableView: UITableView!
-    var data = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Create table view
-        tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.register(MyTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
-    }
-    
-    // MARK: - UITableViewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! MyTableViewCell
-        cell.titleLabel.text = data[indexPath.row]
-        cell.subtitleLabel.text = "Subtitle for item \(indexPath.row + 1)"
-        return cell
-    }
-    
-    // MARK: - UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
+enum NetworkError: Error {
+    case invalidURL
+    case invalidResponse
+    case requestFailed(Error)
+    case invalidData
+    case decodingFailed(Error)
 }
 
-class MyTableViewCell: UITableViewCell {
-    
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        // Add labels to cell
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(subtitleLabel)
-        
-        // Configure labels
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        subtitleLabel.font = UIFont.systemFont(ofSize: 14)
-        
-        // Set constraints for labels
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-        ])
+struct User: Codable {
+    let name: String
+    let email: String
+}
+
+func postUser(user: User, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+    guard let url = URL(string: "https://example.com/users") else {
+        completion(.failure(.invalidURL))
+        return
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    do {
+        let encoder = JSONEncoder()
+        request.httpBody = try encoder.encode(user)
+    } catch {
+        completion(.failure(.requestFailed(error)))
+        return
     }
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        if let error = error {
+            completion(.failure(.requestFailed(error)))
+            return
+        }
+
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            completion(.failure(.invalidResponse))
+            return
+        }
+
+        guard let data = data else {
+            completion(.failure(.invalidData))
+            return
+        }
+
+        do {
+            let decoder = JSONDecoder()
+            let response = try decoder.decode(Void.self, from: data)
+            completion(.success(response))
+        } catch {
+            completion(.failure(.decodingFailed(error)))
+        }
+    }
+
+    task.resume()
 }
