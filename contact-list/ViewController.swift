@@ -1,13 +1,15 @@
-//
-//  ViewController.swift
-//  contact-list
-//
-//  Created by Cora on 24/04/23.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+enum APIError: Error {
+    case serverError
+    case invalidURL
+    case requestFailed
+    case invalidResponse
+    case invalidData
+    case decodingFailed
+}
+
+class ViewController: UINavigationController {
     
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
@@ -28,6 +30,7 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Cadastrar", for: .normal)
         button.backgroundColor = .systemPink
+        button.addTarget(self, action: #selector(sendContact), for: .touchUpInside)
         return button
     }()
     
@@ -36,32 +39,66 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Lista de contato", for: .normal)
         button.backgroundColor = .systemPink
-        button.addTarget(self, action: #selector(listContacts), for: .touchUpInside)
+        button.addTarget(self, action: #selector(listPersons), for: .touchUpInside)
         return button
     }()
     
-    @objc func listContacts() {
-        getContacts()
-        
-        let controller = ListContactViewController()
-        present(controller, animated: true)
+    @objc func sendContact() {
+        let contact = Contact(name: nameTextField.text!, phone: phoneTextField.text!)
+        print(contact)
+        createContact(contact: contact) { result in
+            switch result {
+            case .success(let success):
+                print("sucesso do result")
+                print(success)
+            case .failure(let failure):
+                print("falha do result")
+                print(failure)
+            }
+        }
     }
     
-    func getContacts() {
+    @objc func listPersons() {
+        getPersons { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let success):
+                    let controller = ListContactsTableViewController(people: success)
+                    self.navigationController?.pushViewController(controller, animated: true)
+//                    self.present(controller, animated: true)
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+        }
+    }
+    
+    func getPersons(completion: @escaping (Result<[Person], APIError>) -> Void) {
         // create a URL object
-        let url = URL(string: "https://z1e5l.wiremockapi.cloud/json/1")
+        let url = URL(string: "https://lssev-people-management.herokuapp.com/person")
         
         // create a URLSession object
         let session = URLSession.shared
         
         // create a data task for the GET request
         let task = session.dataTask(with: url!) { (data, response, error) in
+            
+            let decoder = JSONDecoder()
+            do {
+                if let data = data {
+                    let person = try decoder.decode([Person].self, from: data)
+                    completion(.success(person))
+                    print(person)
+                }
+            } catch {
+                print("Failed to decode JSON data: \(error)")
+            }
+            
             // handle any errors
             if let error = error {
                 print("Error: \(error)")
                 return
             }
-            
             
             
             // ensure that we received a response
@@ -78,32 +115,69 @@ class ViewController: UIViewController {
             
             // ensure that we received data
             guard let responseData = data else {
-                let decoder = JSONDecoder()
-                do {
-                    if let data = data {
-                        let person = try decoder.decode(Contact.self, from: data)
-                        print(person)
-                    }
-                } catch {
-                    print("Failed to decode JSON data: \(error)")
-                }
                 print("No data received")
                 return
             }
-            
-            // convert the response data to a string
-            let responseString = String(data: responseData, encoding: .utf8)
-            
-            // do something with the response string
-            print(responseString)
         }
+        
+        
         
         // start the data task
         task.resume()
     }
     
+    func createContact(contact: Contact, completion: @escaping (Result<Person, APIError>) -> Void) {
+        
+        guard let url = URL(string: "https://lssev-people-management.herokuapp.com/person") else { completion(.failure(.invalidURL))
+            return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let encoder = JSONEncoder()
+            request.httpBody = try encoder.encode(contact)
+        } catch {
+            completion(.failure(.requestFailed))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(.requestFailed))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                
+                let person = try decoder.decode(Person.self, from: data)
+                completion(.success(person))
+                print(person)
+            } catch {
+                completion(.failure(.decodingFailed))
+                print("Failed to decode JSON data: \(error)")
+            }
+        }
+        task.resume()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Contatos"
+        navigationBar.barStyle = .black
         
         view.backgroundColor = .systemPurple
         // Do any additional setup after loading the view.

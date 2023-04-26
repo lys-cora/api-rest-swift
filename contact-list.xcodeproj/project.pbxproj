@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24F47FA829F881C300C0EF8E /* ListContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F47FA729F881C300C0EF8E /* ListContactsTableViewController.swift */; };
+		24F47FAA29F8AE0100C0EF8E /* AlertContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F47FA929F8AE0100C0EF8E /* AlertContactViewController.swift */; };
 		879022FD29F762A600D360C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879022FC29F762A600D360C3 /* AppDelegate.swift */; };
 		879022FF29F762A600D360C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879022FE29F762A600D360C3 /* SceneDelegate.swift */; };
 		8790230129F762A600D360C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790230029F762A600D360C3 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24F47FA729F881C300C0EF8E /* ListContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsTableViewController.swift; sourceTree = "<group>"; };
+		24F47FA929F8AE0100C0EF8E /* AlertContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContactViewController.swift; sourceTree = "<group>"; };
 		879022F929F762A600D360C3 /* contact-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "contact-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		879022FC29F762A600D360C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		879022FE29F762A600D360C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				8790231029F7682E00D360C3 /* contact-list.json */,
 				8790231229F769B600D360C3 /* Contact.swift */,
 				8790231429F76E0400D360C3 /* ListContactViewController.swift */,
+				24F47FA729F881C300C0EF8E /* ListContactsTableViewController.swift */,
+				24F47FA929F8AE0100C0EF8E /* AlertContactViewController.swift */,
 			);
 			path = "contact-list";
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 			files = (
 				8790231329F769B600D360C3 /* Contact.swift in Sources */,
 				8790230129F762A600D360C3 /* ViewController.swift in Sources */,
+				24F47FAA29F8AE0100C0EF8E /* AlertContactViewController.swift in Sources */,
+				24F47FA829F881C300C0EF8E /* ListContactsTableViewController.swift in Sources */,
 				879022FD29F762A600D360C3 /* AppDelegate.swift in Sources */,
 				8790231529F76E0400D360C3 /* ListContactViewController.swift in Sources */,
 				879022FF29F762A600D360C3 /* SceneDelegate.swift in Sources */,
