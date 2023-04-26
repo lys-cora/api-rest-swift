@@ -9,7 +9,7 @@ enum APIError: Error {
     case decodingFailed
 }
 
-class ViewController: UINavigationController {
+class ViewController: UIViewController {
     
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
@@ -177,7 +177,7 @@ class ViewController: UINavigationController {
         super.viewDidLoad()
         
         navigationItem.title = "Contatos"
-        navigationBar.barStyle = .black
+//        navigationBar.barStyle = .black
         
         view.backgroundColor = .systemPurple
         // Do any additional setup after loading the view.
