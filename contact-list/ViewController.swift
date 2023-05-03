@@ -72,13 +72,17 @@ class ViewController: UIViewController {
                 switch result {
                 case .success(let success):
                     let controller = ListContactsTableViewController(people: success)
-                    self.navigationController?.pushViewController(controller, animated: true)
-//                    self.present(controller, animated: true)
+//                    self.navigationController?.pushViewController(controller, animated: true)
+                    self.present(controller, animated: true)
                 case .failure(let failure):
                     print(failure)
                 }
             }
         }
+    }
+    
+    @objc func updatePerson() {
+        
     }
     
     func getPersons(completion: @escaping (Result<[Person], APIError>) -> Void) {
@@ -180,9 +184,67 @@ class ViewController: UIViewController {
         task.resume()
     }
     
+    func updateContact(id: String, name: String?, phone: String?, completion: @escaping (Result<Person, APIError>) -> Void) {
+        
+        guard let url = URL(string: "https://lssev-people-management.herokuapp.com/person/\(id)") else { completion(.failure(.invalidURL))
+            return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        let contact = Contact(name: name ?? "Nome não encontrado", phone: phone)
+        
+        do {
+            let encoder = JSONEncoder()
+            request.httpBody = try encoder.encode(contact)
+        } catch {
+            completion(.failure(.requestFailed))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(.requestFailed))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                
+                let person = try decoder.decode(Person.self, from: data)
+                completion(.success(person))
+                print(person)
+            } catch {
+                completion(.failure(.decodingFailed))
+                print("Failed to decode JSON data: \(error)")
+            }
+        }
+        task.resume()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateContact(id: "1", name: "Jim Santos", phone: "+55 13 4545-0909") { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
         
         navigationItem.title = "Contatos"
 //        navigationBar.barStyle = .black

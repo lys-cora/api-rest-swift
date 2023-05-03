@@ -66,6 +66,18 @@ class MyTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     
+    private lazy var editButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemYellow
+        return button
+    }()
+    
+    private lazy var deleteButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemRed
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -80,10 +92,11 @@ class MyTableViewCell: UITableViewCell {
         // Set constraints for labels
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             subtitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),

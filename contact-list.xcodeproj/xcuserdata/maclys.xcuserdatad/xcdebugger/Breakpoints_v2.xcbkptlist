@@ -14,8 +14,8 @@
             filePath = "contact-list/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "getPersons(completion:)"
             landmarkType = "7">
             <Locations>
@@ -94,6 +94,36 @@
                   endingLineNumber = "86"
                   offsetFromSymbolStart = "192">
                </Location>
+               <Location
+                  uuid = "BF4326CD-BE0A-429A-8AA3-66188A295793 - 1cc70b29bc81bda1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "contact_list.ViewController.getPersons(completion: (Swift.Result&lt;Swift.Array&lt;contact_list.Person&gt;, contact_list.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "contact-list"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "BF4326CD-BE0A-429A-8AA3-66188A295793 - 1cc70b29bc81bd25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "contact_list.ViewController.getPersons(completion: (Swift.Result&lt;Swift.Array&lt;contact_list.Person&gt;, contact_list.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "contact-list"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "212">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -107,8 +137,8 @@
             filePath = "contact-list/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "getPersons(completion:)"
             landmarkType = "7">
             <Locations>
@@ -157,314 +187,35 @@
                   endingLineNumber = "117"
                   offsetFromSymbolStart = "1580">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "contact-list/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "sendContact()"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - 7f83af40fe20354f"
+                  uuid = "E55CC4A7-95A0-4343-82E8-B3DA07351505 - 50a0abe13d7ebc22"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in contact_list.ViewController.getPersons(completion: (Swift.Result&lt;Swift.Array&lt;contact_list.Person&gt;, contact_list.APIError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "contact-list"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "152">
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "1432">
                </Location>
                <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - da84acad3beff18d"
+                  uuid = "E55CC4A7-95A0-4343-82E8-B3DA07351505 - 50a0abe13d7ebda6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in contact_list.ViewController.getPersons(completion: (Swift.Result&lt;Swift.Array&lt;contact_list.Person&gt;, contact_list.APIError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "contact-list"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - b4e1b2ba4fa9c161"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "992">
-               </Location>
-               <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - 7f83af40fe20356e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - 7f83af40fe20350d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - e3594df3f200d6d7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; __C.UIButton in contact_list.ViewController.queryButton.getter : __C.UIButton"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "284">
-               </Location>
-               <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - b4e1b2ba4fa9c258"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "992">
-               </Location>
-               <Location
-                  uuid = "6D3159DE-3C62-4AA8-91F2-6E5B8A025F64 - 7f83af40fe203634"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EAF2198A-1BF9-4686-AEFA-0404AB784324"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "contact-list/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "sendContact()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EAF2198A-1BF9-4686-AEFA-0404AB784324 - da84acad3beff1ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "EAF2198A-1BF9-4686-AEFA-0404AB784324 - da84acad3beff1ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  uuid = "EAF2198A-1BF9-4686-AEFA-0404AB784324 - 7f83af40fe20352c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "EAF2198A-1BF9-4686-AEFA-0404AB784324 - b4e1b2ba4fa9c1a7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "EAF2198A-1BF9-4686-AEFA-0404AB784324 - 7f83af40fe2035cb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DF98E965-FA51-4187-8FA8-61D7F0FAE725"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "contact-list/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "sendContact()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DF98E965-FA51-4187-8FA8-61D7F0FAE725 - da84acad3beff001"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "344">
-               </Location>
-               <Location
-                  uuid = "DF98E965-FA51-4187-8FA8-61D7F0FAE725 - 7f83af40fe203481"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "520">
-               </Location>
-               <Location
-                  uuid = "DF98E965-FA51-4187-8FA8-61D7F0FAE725 - b4e1b2ba4fa9c186"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "764">
-               </Location>
-               <Location
-                  uuid = "DF98E965-FA51-4187-8FA8-61D7F0FAE725 - 7f83af40fe2035a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
-                  moduleName = "contact-list"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "520">
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "1432">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -481,7 +232,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "listPersons()"
+            landmarkName = "sendContact()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -514,7 +265,134 @@
                   endingLineNumber = "66"
                   offsetFromSymbolStart = "156">
                </Location>
+               <Location
+                  uuid = "0FC8DCDF-88BC-4CCA-94F9-7F8C1DEAED51 - 7f83af40fe203405"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.sendContact() -&gt; ()"
+                  moduleName = "contact-list"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "792">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92B0BB65-EED3-44C2-873F-B42FC286EDB3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "contact-list/ListContactsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "init(people:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9ADA98AF-1FD2-4146-B0B1-B3494CD8382F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "contact-list/ListContactsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8038CF17-731C-49BB-A67A-0FE4AD2DE420"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "contact-list/ListContactsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3C84F2D-5609-4633-8E41-F4BC5E19591E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "contact-list/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E3C84F2D-5609-4633-8E41-F4BC5E19591E - 9ea8c7997e6b4c7f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "contact-list"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "242"
+                  endingLineNumber = "242"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "E3C84F2D-5609-4633-8E41-F4BC5E19591E - 9ea8c7997e6b4c7f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;contact_list.Person, contact_list.APIError&gt;) -&gt; () in contact_list.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "contact-list"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maclys/Documents/api-rest-swift/contact-list/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "242"
+                  endingLineNumber = "242"
+                  offsetFromSymbolStart = "328">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "487788B0-702C-4B2A-995B-5368000A3B08"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "contact-list/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
