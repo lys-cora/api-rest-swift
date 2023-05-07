@@ -1,4 +1,6 @@
 import UIKit
+import UserNotifications
+
 
 enum APIError: Error {
     case serverError
@@ -10,6 +12,8 @@ enum APIError: Error {
 }
 
 class ViewController: UIViewController {
+    
+    private var wasAllowed: Bool?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -45,11 +49,61 @@ class ViewController: UIViewController {
     private lazy var queryButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Lista de contato", for: .normal)
+        button.setTitle("Lista de contatos", for: .normal)
         button.backgroundColor = .systemPink
         button.addTarget(self, action: #selector(listPersons), for: .touchUpInside)
         return button
     }()
+    
+    private lazy var notificationButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Manda alarme", for: .normal)
+        button.backgroundColor = .systemPink
+        button.addTarget(self, action: #selector(receiveNotification), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func receiveNotification() {
+        
+        let center = UNUserNotificationCenter.current()
+    
+        // Create a notification content object
+        let content = UNMutableNotificationContent()
+        content.title = "My Notification Title"
+        content.body = "This is my notification message."
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "my-audio.mp3"))
+        
+        // Create the date components for the alarm
+        var dateComponents = DateComponents()
+        dateComponents.hour = 20
+        dateComponents.minute = 32
+
+        // Create a notification trigger
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+        // Create a notification request
+        let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
+        
+        center.requestAuthorization(options: [.alert, .sound, .criticalAlert]) { granted, error in
+            if granted {
+                self.addCenterRequest(center: center, request: request)
+                print("Permission granted!")
+            } else {
+                print("Permission denied.")
+            }
+        }
+    }
+    
+    func addCenterRequest(center: UNUserNotificationCenter, request: UNNotificationRequest) {
+        center.add(request) { error in
+            if let error = error {
+                print("Error adding notification request: \(error.localizedDescription)")
+            } else {
+                print("Notification request added successfully!")
+            }
+        }
+    }
     
     @objc func sendContact() {
         let contact = Contact(name: nameTextField.text!, phone: phoneTextField.text!)
@@ -256,6 +310,7 @@ class ViewController: UIViewController {
         view.addSubview(phoneTextField)
         view.addSubview(registerButton)
         view.addSubview(queryButton)
+        view.addSubview(notificationButton)
         
         NSLayoutConstraint.activate([
             nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
@@ -273,6 +328,10 @@ class ViewController: UIViewController {
             queryButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 20),
             queryButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             queryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            
+            notificationButton.topAnchor.constraint(equalTo: queryButton.bottomAnchor, constant: 20),
+            notificationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            notificationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
         ])
     }
     
